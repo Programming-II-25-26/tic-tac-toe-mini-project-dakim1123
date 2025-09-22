@@ -1,17 +1,25 @@
-#Starter code for tic tac toe project
+board = [[" ", " ", " "],
+        [" ", " ", " "],
+        [" ", " ", " "]]
 
-def displayboard(board):
-    print(" ", board[0][0], "│", board[0][1], "│", board[0][2])
-    print(" ───┼───┼───")
-    print(" ", board[1][0], "│", board[1][1], "│", board[1][2])
-    print(" ───┼───┼───")
-    print(" ", board[2][0], "│", board[2][1], "│", board[2][2])
+def displayboard():
+    for space in range(3):
+        print(" ", board[space][space], "│", board[space][space], "│", board[space][space])
+        if space < 2:
+            print(" ───┼───┼─── ")
 
+def tictactoe():
     
-    
+    end = False
 
-board = [[" "," "," "],
-          [" "," "," "],
-          [" "," "," "]]
-          
-displayboard(board)
+    displayboard()
+
+    while end == False:
+        P1play = input("Player 1 moves, input x and y: ")
+        P1play = P1play.split()
+        board[P1play[0], P1play[1]] = "X"
+        displayboard()
+
+
+
+tictactoe()
